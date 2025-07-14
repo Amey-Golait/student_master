@@ -1,0 +1,30 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Guardian Detail",
+  "email": null,
+  "guardian_name": "Sanjay Pralhadrao Golait",
+  "modified": "2025-07-07 12:53:50.124152",
+  "name": "71tapqkr17",
+  "occupation": "Business ",
+  "parent": "14000",
+  "parentfield": "guardian_details",
+  "parenttype": "Student",
+  "phone_number": "9850680616",
+  "relation": "Father"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Guardian Detail",
+  "email": null,
+  "guardian_name": "Jyoti Sanjay Golait",
+  "modified": "2025-07-07 12:53:50.124152",
+  "name": "71t9bbqpoq",
+  "occupation": "Housewife",
+  "parent": "14000",
+  "parentfield": "guardian_details",
+  "parenttype": "Student",
+  "phone_number": "7448126105",
+  "relation": "Mother"
+ }
+]

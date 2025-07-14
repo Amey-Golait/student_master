@@ -1,0 +1,55 @@
+{
+  "doctype": "DocType",
+  "name": "Class",
+  "module": "Student Master",
+  "custom": 0,
+  "autoname": "field:class_name",
+  "fields": [
+    {
+      "fieldname": "class_name",
+      "fieldtype": "Data",
+      "label": "Class Name",
+      "reqd": 1
+    },
+    {
+      "fieldname": "academic_year",
+      "fieldtype": "Link",
+      "label": "Academic Year",
+      "options": "Academic Year",
+      "reqd": 1
+    },
+    {
+      "fieldname": "section",
+      "fieldtype": "Data",
+      "label": "Section"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Active\nArchived",
+      "reqd": 1
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    }
+  ],
+  "istable": 0,
+  "editable_grid": 0,
+  "title_field": "class_name",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1,
+      "amend": 1
+    }
+  ]
+}

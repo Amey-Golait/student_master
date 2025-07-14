@@ -1,0 +1,47 @@
+{
+  "doctype": "DocType",
+  "name": "Guardian Detail",
+  "module": "Student Master",
+  "custom": 0,
+  "istable": 1,
+  "allow_import": 1,
+  "fields": [
+    {
+      "fieldname": "guardian_name",
+      "label": "Guardian Name",
+      "fieldtype": "Data",
+      "reqd": 1
+    },
+    {
+      "fieldname": "relation",
+      "label": "Relation",
+      "fieldtype": "Select",
+      "options": "Father\nMother\nGuardian",
+      "reqd": 1
+    },
+    {
+      "fieldname": "occupation",
+      "label": "Occupation",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "phone_number",
+      "label": "Phone Number",
+      "fieldtype": "Data",
+      "reqd": 1
+    },
+    {
+      "fieldname": "email",
+      "label": "Email",
+      "fieldtype": "Data"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1
+    }
+  ]
+}

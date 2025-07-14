@@ -1,0 +1,64 @@
+{
+  "doctype": "DocType",
+  "name": "Class Enrollment",
+  "module": "Student Master",
+  "custom": 0,
+  "autoname": "format:{student}-{class}-{academic_year}",
+  "fields": [
+    {
+      "fieldname": "student",
+      "fieldtype": "Link",
+      "label": "Student",
+      "options": "Student",
+      "reqd": 1
+    },
+    {
+      "fieldname": "class",
+      "fieldtype": "Link",
+      "label": "Class",
+      "options": "Class",
+      "reqd": 1
+    },
+    {
+      "fieldname": "academic_year",
+      "fieldtype": "Link",
+      "label": "Academic Year",
+      "options": "Academic Year",
+      "reqd": 1
+    },
+    {
+      "fieldname": "enrollment_date",
+      "fieldtype": "Date",
+      "label": "Enrollment Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Active\nLeft\nTransferred",
+      "reqd": 1
+    },
+    {
+      "fieldname": "remarks",
+      "fieldtype": "Small Text",
+      "label": "Remarks"
+    }
+  ],
+  "istable": 0,
+  "editable_grid": 0,
+  "title_field": "student",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1,
+      "amend": 1
+    }
+  ]
+}

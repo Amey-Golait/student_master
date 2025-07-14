@@ -1,0 +1,45 @@
+# Python
+*.pyc
+__pycache__/
+
+# Mac
+.DS_Store
+
+# Editor/IDE
+*.sublime-project
+*.sublime-workspace
+.vscode/
+*.swp
+*.swo
+
+# Node/JS (if frontend assets are added later)
+node_modules/
+*.log
+
+# Environment
+.env
+env/
+venv/
+
+# Bench/Build Artifacts
+public/build/
+public/js/build/
+*.tar.gz
+*.zip
+
+# OS/Permission
+*.pid
+*.sock
+*.db
+*.db-journal
+
+# ERPNext-specific
+*.log
+*.sqlite
+sites/*/private/backups/
+sites/*/private/files/
+sites/*/public/files/
+
+# Ignore private site configs (if you ever commit site)
+sites/common_site_config.json
+sites/*/site_config.json

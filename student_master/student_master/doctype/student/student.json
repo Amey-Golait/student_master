@@ -1,0 +1,73 @@
+{
+  "doctype": "DocType",
+  "name": "Student",
+  "module": "Student Master",
+  "custom": 0,
+  "istable": 0,
+  "allow_import": 1,
+  "fields": [
+    {
+      "fieldname": "student_id",
+      "label": "Student ID",
+      "fieldtype": "Data",
+      "reqd": 1
+    },
+    {
+      "fieldname": "full_name",
+      "label": "Full Name",
+      "fieldtype": "Data",
+      "reqd": 1
+    },
+    {
+      "fieldname": "gender",
+      "label": "Gender",
+      "fieldtype": "Select",
+      "options": "Male\nFemale\nOther",
+      "reqd": 1
+    },
+    {
+      "fieldname": "date_of_birth",
+      "label": "Date of Birth",
+      "fieldtype": "Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "student_phone_number",
+      "label": "Student Phone Number",
+      "fieldtype": "Data",
+      "reqd": 1
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Active\nAlumni\nDropped",
+      "reqd": 1
+    },
+    {
+      "fieldname": "address",
+      "label": "Address",
+      "fieldtype": "Small Text"
+    },
+    {
+      "fieldname": "photo",
+      "label": "Photo",
+      "fieldtype": "Attach Image"
+    },
+    {
+      "fieldname": "guardian_details",
+      "label": "Guardian Details",
+      "fieldtype": "Table",
+      "options": "Guardian Detail",
+      "reqd": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1
+    }
+  ]
+}

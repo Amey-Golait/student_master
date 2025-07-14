@@ -1,0 +1,50 @@
+{
+  "doctype": "DocType",
+  "name": "Academic Year",
+  "module": "Student Master",
+  "custom": 0,
+  "autoname": "field:academic_year",
+  "fields": [
+    {
+      "fieldname": "academic_year",
+      "fieldtype": "Data",
+      "label": "Academic Year",
+      "reqd": 1
+    },
+    {
+      "fieldname": "start_date",
+      "fieldtype": "Date",
+      "label": "Start Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "end_date",
+      "fieldtype": "Date",
+      "label": "End Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Active\nArchived",
+      "reqd": 0
+    }
+  ],
+  "istable": 0,
+  "editable_grid": 0,
+  "title_field": "academic_year",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1,
+      "amend": 1
+    }
+  ]
+}
