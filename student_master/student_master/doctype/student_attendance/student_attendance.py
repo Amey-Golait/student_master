@@ -4,7 +4,7 @@ from frappe.utils import nowdate
 
 class StudentAttendance(Document):
     def validate(self):
-        
+        # Auto-fill academic year
         if not self.academic_year:
             today = nowdate()
             academic_year = frappe.db.get_value(
@@ -20,6 +20,7 @@ class StudentAttendance(Document):
             else:
                 frappe.msgprint("No valid Academic Year found for today.")
 
+        # Prevent duplicate attendance
         existing = frappe.db.exists(
             "Student Attendance",
             {
