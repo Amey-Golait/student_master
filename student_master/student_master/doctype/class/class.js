@@ -1,7 +1,7 @@
 // Copyright (c) 2025, Amey Golait and contributors
 // For license information, please see license.txt
 
-// frappe.ui.form.on("Student Attendance", {
+// frappe.ui.form.on("Class", {
 // 	refresh(frm) {
 
 // 	},

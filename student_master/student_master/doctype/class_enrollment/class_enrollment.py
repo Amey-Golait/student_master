@@ -3,7 +3,7 @@ from frappe.model.document import Document
 
 class ClassEnrollment(Document):
     def validate(self):
-        if not self.student or not self.class_ or not self.academic_year:
+        if not self.student or not self.class_link or not self.academic_year:
             frappe.throw("Student, Class, and Academic Year are mandatory.")
 
         # Prevent duplicate active enrollment for same student/year

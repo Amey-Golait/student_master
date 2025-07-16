@@ -1,64 +1,89 @@
 {
-  "doctype": "DocType",
-  "name": "Class Enrollment",
-  "module": "Student Master",
-  "custom": 0,
-  "autoname": "format:{student}-{class}-{academic_year}",
-  "fields": [
-    {
-      "fieldname": "student",
-      "fieldtype": "Link",
-      "label": "Student",
-      "options": "Student",
-      "reqd": 1
-    },
-    {
-      "fieldname": "class",
-      "fieldtype": "Link",
-      "label": "Class",
-      "options": "Class",
-      "reqd": 1
-    },
-    {
-      "fieldname": "academic_year",
-      "fieldtype": "Link",
-      "label": "Academic Year",
-      "options": "Academic Year",
-      "reqd": 1
-    },
-    {
-      "fieldname": "enrollment_date",
-      "fieldtype": "Date",
-      "label": "Enrollment Date",
-      "reqd": 1
-    },
-    {
-      "fieldname": "status",
-      "fieldtype": "Select",
-      "label": "Status",
-      "options": "Active\nLeft\nTransferred",
-      "reqd": 1
-    },
-    {
-      "fieldname": "remarks",
-      "fieldtype": "Small Text",
-      "label": "Remarks"
-    }
-  ],
-  "istable": 0,
-  "editable_grid": 0,
-  "title_field": "student",
-  "permissions": [
-    {
-      "role": "System Manager",
-      "permlevel": 0,
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 1,
-      "submit": 1,
-      "cancel": 1,
-      "amend": 1
-    }
-  ]
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-09 13:19:31.413248",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "student",
+  "class_link",
+  "academic_year",
+  "enrollment_date",
+  "status",
+  "remarks",
+  "display_title"
+ ],
+ "fields": [
+  {
+   "fieldname": "student",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Student",
+   "options": "Student",
+   "reqd": 1
+  },
+  {
+   "fetch_if_empty": 1,
+   "fieldname": "academic_year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Academic Year",
+   "options": "Academic Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "enrollment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Enrollment Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nLeft\nTransferred",
+   "reqd": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "class_link",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Class",
+   "options": "Class",
+   "reqd": 1
+  },
+  {
+   "fieldname": "display_title",
+   "fieldtype": "Data",
+   "label": "Display Title"
+  }
+ ],
+ "links": [],
+ "modified": "2025-07-16 12:53:31.501711",
+ "modified_by": "Administrator",
+ "module": "student_master",
+ "name": "Class Enrollment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "student",
+ "track_changes": 1
 }

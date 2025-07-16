@@ -1,55 +1,79 @@
 {
-  "doctype": "DocType",
-  "name": "Class",
-  "module": "Student Master",
-  "custom": 0,
-  "autoname": "field:class_name",
-  "fields": [
-    {
-      "fieldname": "class_name",
-      "fieldtype": "Data",
-      "label": "Class Name",
-      "reqd": 1
-    },
-    {
-      "fieldname": "academic_year",
-      "fieldtype": "Link",
-      "label": "Academic Year",
-      "options": "Academic Year",
-      "reqd": 1
-    },
-    {
-      "fieldname": "section",
-      "fieldtype": "Data",
-      "label": "Section"
-    },
-    {
-      "fieldname": "status",
-      "fieldtype": "Select",
-      "label": "Status",
-      "options": "Active\nArchived",
-      "reqd": 1
-    },
-    {
-      "fieldname": "description",
-      "fieldtype": "Small Text",
-      "label": "Description"
-    }
-  ],
-  "istable": 0,
-  "editable_grid": 0,
-  "title_field": "class_name",
-  "permissions": [
-    {
-      "role": "System Manager",
-      "permlevel": 0,
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 1,
-      "submit": 1,
-      "cancel": 1,
-      "amend": 1
-    }
-  ]
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-07 16:03:36.897606",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "class_name",
+  "academic_year",
+  "section",
+  "status",
+  "description",
+  "title"
+ ],
+ "fields": [
+  {
+   "fieldname": "class_name",
+   "fieldtype": "Data",
+   "label": "Class Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "academic_year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Academic Year",
+   "options": "Academic Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section",
+   "fieldtype": "Data",
+   "label": "Section"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Active\nArchived",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Display Title",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2025-07-16 12:09:54.892284",
+ "modified_by": "Administrator",
+ "module": "student_master",
+ "name": "Class",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
 }

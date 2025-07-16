@@ -6,7 +6,11 @@ class Class(Document):
         if self.class_name:
             self.class_name = self.class_name.strip()
 
-        # Optional: validate academic year dates
+        # Set title field for display in link fields
+        if self.class_name and self.section and self.academic_year:
+            self.title = f"{self.class_name}-{self.section} - {self.academic_year}"
+
+        # Optional: validate academic year
         if self.academic_year:
             ay = frappe.get_doc("Academic Year", self.academic_year)
             if ay.status == "Archived" and self.status == "Active":
