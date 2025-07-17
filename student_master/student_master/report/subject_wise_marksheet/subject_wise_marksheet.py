@@ -43,7 +43,12 @@ def execute(filters=None):
                     }
 
                 marks = flt(res.marks_obtained) if res.status == "Present" else 0
-                student_scores[sid]["marks"][subject] = marks
+
+                # ✅ FIX: Accumulate marks per subject instead of overwriting
+                if subject not in student_scores[sid]["marks"]:
+                    student_scores[sid]["marks"][subject] = 0
+                student_scores[sid]["marks"][subject] += marks
+
                 student_scores[sid]["total"] += marks
                 student_scores[sid]["count"] += 1
 
