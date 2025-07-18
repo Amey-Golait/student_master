@@ -9,7 +9,8 @@
   "class_link",
   "academic_year",
   "date",
-  "students"
+  "students",
+  "amended_from"
  ],
  "fields": [
   {
@@ -21,7 +22,6 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Class",
-   "link_filters": "{\"status\": \"Active\"}\n",
    "options": "Class",
    "reqd": 1
   },
@@ -45,12 +45,22 @@
    "label": "Students",
    "options": "Class Attendance Student",
    "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Class Attendance",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-16 15:57:09.108521",
+ "modified": "2025-07-18 13:33:11.919929",
  "modified_by": "Administrator",
  "module": "student_master",
  "name": "Class Attendance",
@@ -65,6 +75,30 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Teacher",
    "share": 1,
    "write": 1
   }

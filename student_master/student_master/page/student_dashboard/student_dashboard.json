@@ -1,0 +1,19 @@
+{
+ "content": null,
+ "creation": "2025-07-17 12:42:58.142284",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2025-07-18 15:43:21.826091",
+ "modified_by": "Administrator",
+ "module": "student_master",
+ "name": "student-dashboard",
+ "owner": "Administrator",
+ "page_name": "student-dashboard",
+ "roles": [],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "student-dashboard"
+}

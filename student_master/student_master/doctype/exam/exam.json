@@ -12,7 +12,8 @@
   "class_link",
   "academic_year",
   "total_marks",
-  "students"
+  "students",
+  "amended_from"
  ],
  "fields": [
   {
@@ -68,12 +69,22 @@
    "label": "Students",
    "options": "Student Exam Result",
    "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Exam",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-17 11:01:06.238908",
+ "modified": "2025-07-18 15:09:51.942368",
  "modified_by": "Administrator",
  "module": "student_master",
  "name": "Exam",
@@ -90,6 +101,39 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Teacher",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Parent",
+   "share": 1
   }
  ],
  "row_format": "Dynamic",

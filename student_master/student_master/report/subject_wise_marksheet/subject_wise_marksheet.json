@@ -10,7 +10,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2025-07-16 18:28:55.691980",
+ "modified": "2025-07-18 13:27:28.942856",
  "modified_by": "Administrator",
  "module": "student_master",
  "name": "Subject Wise Marksheet",
@@ -22,6 +22,9 @@
  "roles": [
   {
    "role": "System Manager"
+  },
+  {
+   "role": "Admin"
   }
  ],
  "timeout": 0
