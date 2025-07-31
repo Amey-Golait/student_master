@@ -1,0 +1,48 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-30 18:54:21.290288",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_4qqc",
+  "bot_token"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_4qqc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "bot_token",
+   "fieldtype": "Data",
+   "label": "Bot Token"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-30 18:54:56.003750",
+ "modified_by": "Administrator",
+ "module": "student_master",
+ "name": "Telegram Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
