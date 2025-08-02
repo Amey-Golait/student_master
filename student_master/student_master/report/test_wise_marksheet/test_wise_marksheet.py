@@ -12,13 +12,11 @@ def execute(filters=None):
     if not (exam_id and class_link and academic_year):
         frappe.throw("Please select Exam, Class, and Academic Year.")
 
-    # ✅ Get exam_name from selected exam
     base_exam = frappe.get_doc("Exam", exam_id)
     exam_name = base_exam.exam_name
 
     frappe.msgprint(f"Using exam_name: {exam_name}")
 
-    # Fetch all exams under this test
     exams = frappe.get_all("Exam", filters={
         "exam_name": exam_name,
         "class_link": class_link,
@@ -55,7 +53,6 @@ def execute(filters=None):
             student_scores[sid]["total"] += marks
             student_scores[sid]["count"] += 1
 
-    # Build data
     data = []
     for sid, info in student_scores.items():
         row = [info["student_name"]]
@@ -66,7 +63,6 @@ def execute(filters=None):
         row += [total, avg]
         data.append(row)
 
-    # Ranking
     data.sort(key=lambda x: x[-2], reverse=True)
     for i, row in enumerate(data):
         row.append(i + 1)

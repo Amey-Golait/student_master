@@ -1,5 +1,3 @@
-# student_master/student_master/doctype/assignment/assignment.py
-
 import frappe
 from frappe.model.document import Document
 from student_master.student_master.utils.send_exam_result_telegram import send_assignment_telegram

@@ -1,5 +1,3 @@
-# exam.py
-
 import frappe
 from frappe.model.document import Document
 from student_master.student_master.utils.send_exam_result_telegram import send_exam_result_telegram
@@ -18,7 +16,6 @@ class Exam(Document):
                 if row.marks_obtained > self.total_marks:
                     frappe.throw(f"{row.student_name}'s marks exceed Total Marks.")
 
-# this function is used in hooks.py
 def handle_on_submit(doc, method=None):
     try:
         frappe.logger().info(f"📤 Submitting Exam: {doc.name}")
@@ -28,5 +25,4 @@ def handle_on_submit(doc, method=None):
 
 @frappe.whitelist()
 def get_students_from_class(class_link, academic_year):
-    # same as before
     ...

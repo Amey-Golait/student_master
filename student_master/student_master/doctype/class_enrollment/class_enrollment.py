@@ -6,7 +6,6 @@ class ClassEnrollment(Document):
         if not self.student or not self.class_link or not self.academic_year:
             frappe.throw("Student, Class, and Academic Year are mandatory.")
 
-        # Prevent duplicate active enrollment for same student/year
         if self.status == "Active":
             exists = frappe.db.exists(
                 "Class Enrollment",

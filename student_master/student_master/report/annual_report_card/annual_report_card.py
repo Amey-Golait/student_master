@@ -15,7 +15,6 @@ def execute(filters=None):
     data = []
     subject_totals = {}
 
-    # Fetch all exams across academic years/classes
     exams = frappe.get_all("Exam", fields=["name", "exam_name", "subject", "total_marks"], order_by="subject, exam_name")
 
     for exam in exams:
@@ -43,7 +42,6 @@ def execute(filters=None):
                 subject_totals[exam.subject]["marks_obtained"] += row.marks_obtained or 0
                 subject_totals[exam.subject]["total_marks"] += exam.total_marks
 
-    # Format subject-wise data and add totals
     subjectwise_data = []
     current_subject = None
     for row in data:
@@ -60,7 +58,6 @@ def execute(filters=None):
             current_subject = row["subject"]
         subjectwise_data.append(row)
 
-    # Add last subject's total
     if current_subject and current_subject in subject_totals:
         totals = subject_totals[current_subject]
         subjectwise_data.append({
@@ -71,7 +68,6 @@ def execute(filters=None):
             "status": ""
         })
 
-    # Grand Total
     grand_total_marks = sum(v["marks_obtained"] for v in subject_totals.values())
     grand_total_out_of = sum(v["total_marks"] for v in subject_totals.values())
 

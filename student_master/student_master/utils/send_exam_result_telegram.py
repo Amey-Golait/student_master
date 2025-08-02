@@ -3,12 +3,12 @@ import requests
 
 @frappe.whitelist()
 def send_exam_result_telegram(exam_name):
-    print("🚨 ENTERED send_exam_result_telegram FUNCTION 🚨")
+    print(" ENTERED send_exam_result_telegram FUNCTION ")
 
     try:
         doc = frappe.get_doc("Exam", exam_name)
     except Exception as e:
-        print("❌ Error loading Exam:", str(e))
+        print("Error loading Exam:", str(e))
         return
 
     print("📘 Exam loaded:", doc.exam_name)
@@ -24,11 +24,11 @@ def send_exam_result_telegram(exam_name):
         try:
             student = frappe.get_doc("Student", row.student)
         except Exception as e:
-            print(f"❌ Error loading student {row.student}: {str(e)}")
+            print(f"Error loading student {row.student}: {str(e)}")
             continue
 
         if not student.telegram_chat_id:
-            print(f"⚠️ No Telegram chat ID for {student.name}")
+            print(f"No Telegram chat ID for {student.name}")
             continue
 
         message = (
@@ -40,9 +40,9 @@ def send_exam_result_telegram(exam_name):
 
         try:
             send_telegram_message(student.telegram_chat_id, message)
-            print(f"✅ Message sent to {student.name}")
+            print(f"Message sent to {student.name}")
         except Exception as e:
-            print(f"❌ Failed to send message: {str(e)}")
+            print(f"Failed to send message: {str(e)}")
 
 
 def send_telegram_message(chat_id, message):
@@ -65,16 +65,16 @@ def send_telegram_message(chat_id, message):
 
 @frappe.whitelist()
 def send_assignment_telegram(assignment_name):
-    print("🚨 ENTERED send_assignment_telegram FUNCTION 🚨")
+    print(" ENTERED send_assignment_telegram FUNCTION ")
 
     try:
         doc = frappe.get_doc("Assignment", assignment_name)
     except Exception as e:
-        print("❌ Error loading Assignment:", str(e))
+        print("Error loading Assignment:", str(e))
         return
 
     if not doc.class_link:
-        print("⚠️ No class linked to this assignment.")
+        print("No class linked to this assignment.")
         return
 
     students = frappe.get_all("Class Enrollment",
@@ -88,11 +88,11 @@ def send_assignment_telegram(assignment_name):
         try:
             student = frappe.get_doc("Student", s.student)
         except Exception as e:
-            print(f"❌ Error loading student {s.student}: {str(e)}")
+            print(f"Error loading student {s.student}: {str(e)}")
             continue
 
         if not student.telegram_chat_id:
-            print(f"⚠️ No Telegram chat ID for {student.name}")
+            print(f"No Telegram chat ID for {student.name}")
             continue
 
         message = (
@@ -105,36 +105,36 @@ def send_assignment_telegram(assignment_name):
 
         try:
             send_telegram_message(student.telegram_chat_id, message)
-            print(f"✅ Message sent to {student.name}")
+            print(f"Message sent to {student.name}")
         except Exception as e:
-            print(f"❌ Failed to send message: {str(e)}")
+            print(f"Failed to send message: {str(e)}")
 
 def send_assignment_submission_telegram(submission_name):
-    print("🚨 ENTERED send_assignment_submission_telegram FUNCTION 🚨")
+    print(" ENTERED send_assignment_submission_telegram FUNCTION ")
 
     try:
         doc = frappe.get_doc("Assignment Submission", submission_name)
         print("📄 Loaded submission:", doc.name)
     except Exception as e:
-        print("❌ Error loading submission:", str(e))
+        print("Error loading submission:", str(e))
         return
 
     try:
         student = frappe.get_doc("Student", doc.student)
         print("👤 Loaded student:", student.name)
     except Exception as e:
-        print(f"❌ Error loading student {doc.student}: {str(e)}")
+        print(f"Error loading student {doc.student}: {str(e)}")
         return
 
     try:
         assignment = frappe.get_doc("Assignment", doc.assignment)
         print("📘 Loaded assignment:", assignment.title)
     except Exception as e:
-        print(f"❌ Error loading assignment {doc.assignment}: {str(e)}")
+        print(f"Error loading assignment {doc.assignment}: {str(e)}")
         return
 
     if not student.telegram_chat_id:
-        print(f"⚠️ No Telegram Chat ID for {student.name}")
+        print(f"No Telegram Chat ID for {student.name}")
         return
 
     message = (
@@ -142,30 +142,30 @@ def send_assignment_submission_telegram(submission_name):
         f"📘 *Assignment:* {assignment.title}\n"
         f"👤 *Student:* {student.full_name}\n"
         f"📅 *Submitted On:* {doc.submission}\n\n"
-        f"✅ Your assignment has been recorded. Thank you!"
+        f"Your assignment has been recorded. Thank you!"
     )
 
     try:
         send_telegram_message(student.telegram_chat_id, message)
-        print(f"✅ Telegram message sent to {student.full_name}")
+        print(f"Telegram message sent to {student.full_name}")
     except Exception as e:
-        print(f"❌ Failed to send message: {str(e)}")
+        print(f"Failed to send message: {str(e)}")
 
 def send_assignment_review_telegram(review_name):
-    print("🚨 ENTERED send_assignment_review_telegram FUNCTION 🚨")
+    print(" ENTERED send_assignment_review_telegram FUNCTION ")
 
     try:
         review_doc = frappe.get_doc("Assignment Review", review_name)
         print("📄 Loaded Assignment Review:", review_doc.name)
     except Exception as e:
-        print("❌ Error loading Assignment Review:", str(e))
+        print("Error loading Assignment Review:", str(e))
         return
 
     try:
         assignment = frappe.get_doc("Assignment", review_doc.assignment)
         print("📘 Loaded assignment:", assignment.title)
     except Exception as e:
-        print("❌ Error loading Assignment:", str(e))
+        print("Error loading Assignment:", str(e))
         return
 
     for row in review_doc.review_table:
@@ -173,24 +173,24 @@ def send_assignment_review_telegram(review_name):
             student = frappe.get_doc("Student", row.student)
             print("👤 Loaded student:", student.name)
         except Exception as e:
-            print(f"❌ Error loading student {row.student}: {str(e)}")
+            print(f"Error loading student {row.student}: {str(e)}")
             continue
 
         if not student.telegram_chat_id:
-            print(f"⚠️ No Telegram Chat ID for {student.name}")
+            print(f"No Telegram Chat ID for {student.name}")
             continue
 
         message = (
             f"📋 *Assignment Review Completed*\n\n"
             f"📘 *Assignment:* {assignment.title}\n"
             f"👤 *Student:* {student.full_name}\n"
-            f"✅ *Grade:* {row.grade or 'Not given'}\n"
+            f"*Grade:* {row.grade or 'Not given'}\n"
             f"💬 *Feedback:* {row.feedback or 'No feedback'}\n\n"
             f"Thank you!"
         )
 
         try:
             send_telegram_message(student.telegram_chat_id, message)
-            print(f"✅ Telegram message sent to {student.full_name}")
+            print(f"Telegram message sent to {student.full_name}")
         except Exception as e:
-            print(f"❌ Failed to send message to {student.full_name}: {str(e)}")
+            print(f"Failed to send message to {student.full_name}: {str(e)}")

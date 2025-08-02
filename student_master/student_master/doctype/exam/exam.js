@@ -29,7 +29,6 @@ frappe.ui.form.on('Exam', {
     },
 
     setup(frm) {
-        // Filter: Active Classes
         frm.set_query('class_link', () => {
             return {
                 filters: {
@@ -38,7 +37,6 @@ frappe.ui.form.on('Exam', {
             };
         });
 
-        // Filter: Active Academic Years
         frm.set_query('academic_year', () => {
             return {
                 filters: {

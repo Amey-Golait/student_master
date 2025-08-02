@@ -11,7 +11,6 @@ def execute(filters=None):
     if not class_link or not academic_year:
         frappe.throw("Please select both Class and Academic Year.")
 
-    # Get all exams for selected class/year
     exams = frappe.get_all("Exam", filters={
         "class_link": class_link,
         "academic_year": academic_year
@@ -23,7 +22,6 @@ def execute(filters=None):
 
     subjects = sorted(subject_map.keys())
 
-    # Fetch scores
     student_scores = {}
 
     for subject in subjects:
@@ -44,7 +42,6 @@ def execute(filters=None):
 
                 marks = flt(res.marks_obtained) if res.status == "Present" else 0
 
-                # ✅ FIX: Accumulate marks per subject instead of overwriting
                 if subject not in student_scores[sid]["marks"]:
                     student_scores[sid]["marks"][subject] = 0
                 student_scores[sid]["marks"][subject] += marks
@@ -52,7 +49,6 @@ def execute(filters=None):
                 student_scores[sid]["total"] += marks
                 student_scores[sid]["count"] += 1
 
-    # Build data rows
     data = []
     for sid, info in student_scores.items():
         row = [info["student_name"]]
@@ -63,12 +59,10 @@ def execute(filters=None):
         row += [total, average]
         data.append(row)
 
-    # Sort by total descending and assign rank
     data.sort(key=lambda x: x[-2], reverse=True)
     for i, row in enumerate(data):
         row.append(i + 1)
 
-    # Column definitions
     columns = [{"label": "Student", "fieldtype": "Data", "width": 200}]
     columns += [{"label": subject, "fieldtype": "Float", "width": 120} for subject in subjects]
     columns += [

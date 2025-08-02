@@ -35,7 +35,6 @@ frappe.ui.form.on('Class Attendance', {
 });
 frappe.ui.form.on('Class Attendance', {
     setup(frm) {
-        // Filter for Class Link: Only Active Classes
         frm.set_query('class_link', () => {
             return {
                 filters: {
@@ -44,7 +43,6 @@ frappe.ui.form.on('Class Attendance', {
             };
         });
 
-        // Filter for Academic Year: Only Active Years
         frm.set_query('academic_year', () => {
             return {
                 filters: {
